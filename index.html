@@ -34,9 +34,7 @@
         width: 224px;
         height: 16px;
         border-radius: 8px;
-        font-family: "Ubuntu", sans-serif;
-        font-size: 16px;
-        font-weight: 60;
+        font: 600 16px "Ubuntu", sans-serif;
         border: 2px solid hsl(229, 24%, 87%);
         padding: 16px;
         cursor: pointer;
@@ -50,6 +48,21 @@
       .input:-webkit-autofill:focus,
       .input:-webkit-autofill:active {
         -webkit-box-shadow: 0 0 0 30px white inset !important;
+      }
+
+      /* btn */
+      .btn-next {
+        width: 96px;
+        height: 32px;
+        background-color: hsl(213, 96%, 18%);
+        color: white;
+        border-radius: 4px;
+        border: none;
+        font: 400 14px "Ubuntu", sans-serif;
+        cursor: pointer;
+      }
+      .btn-next:hover {
+        background-color: hsl(243, 100%, 62%);
       }
     </style>
     <script>
@@ -93,23 +106,41 @@
         return fragment;
       }
 
-      const NameInput = Input("text", "name", "Name", "e.g. Stephen King");
-      const EmailAddress = Input(
-        "email",
-        "email",
-        "Email Address",
-        "e.g. stephenking@lorem.com"
-      );
-      const PhoneNumber = Input(
-        "tel",
-        "tel",
-        "Phone Number",
-        "e.g. +1 234 567 890"
-      );
+      /**
+       * Creates a button component.
+       */
+      function Button() {
+        const fragment = document.createDocumentFragment();
+        const button = document.createElement("button");
 
-      document.body.appendChild(NameInput);
-      document.body.appendChild(EmailAddress);
-      document.body.appendChild(PhoneNumber);
+        button.innerText = "Next Step";
+
+        button.className = "btn-next";
+
+        fragment.appendChild(button);
+
+        return fragment;
+      }
+      // const NameInput = Input("text", "name", "Name", "e.g. Stephen King");
+      // const EmailAddress = Input(
+      //   "email",
+      //   "email",
+      //   "Email Address",
+      //   "e.g. stephenking@lorem.com"
+      // );
+      // const PhoneNumber = Input(
+      //   "tel",
+      //   "tel",
+      //   "Phone Number",
+      //   "e.g. +1 234 567 890"
+      // );
+
+      // document.body.appendChild(NameInput);
+      // document.body.appendChild(EmailAddress);
+      // document.body.appendChild(PhoneNumber);
+
+      const NextStep = Button();
+      document.body.appendChild(NextStep);
     </script>
   </body>
 </html>
