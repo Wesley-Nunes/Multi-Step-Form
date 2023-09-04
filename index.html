@@ -9,6 +9,7 @@
       href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
+    <script src="./dist/bundle.min.js" defer></script>
     <title>Multi Step Form</title>
   </head>
   <body style="display: flex; flex-direction: column; gap: 16px">
@@ -25,10 +26,11 @@
         justify-content: space-between;
         margin-bottom: 8px;
       }
-      .required-message {
-        display: none;
-        font-weight: 70;
+      .error-message {
+        font-size: 12px;
+        font-weight: 700;
         color: hsl(354, 84%, 57%);
+        padding-top: 4px;
       }
       .input {
         width: 224px;
@@ -65,82 +67,5 @@
         background-color: hsl(243, 100%, 62%);
       }
     </style>
-    <script>
-      /**
-       * Creates an input component.
-       * @param {string} type - The type of the input.
-       * @param {string} id - The id of the input.
-       * @param {string} labelMessage - The caption of the input.
-       * @param {string} placeholder - The placeholder to be show inside the input.
-       */
-      function Input(type, id, labelMessage, placeholder) {
-        const requiredMessage = "This Field is Required";
-        const fragment = document.createDocumentFragment();
-        const label = document.createElement("label");
-        const textContainer = document.createElement("div");
-        const labelName = document.createElement("span");
-        const required = document.createElement("span");
-        const input = document.createElement("input");
-
-        label.htmlFor = id;
-        input.id = id;
-        input.placeholder = placeholder;
-        input.required = true;
-        input.type = type;
-
-        label.className = "label";
-        textContainer.className = "text-container";
-        required.className = "required-message";
-        input.className = "input";
-
-        labelName.textContent = labelMessage;
-        required.textContent = requiredMessage;
-
-        label.appendChild(textContainer);
-        label.appendChild(input);
-        textContainer.appendChild(labelName);
-        textContainer.appendChild(required);
-
-        fragment.appendChild(label);
-
-        return fragment;
-      }
-
-      /**
-       * Creates a button component.
-       */
-      function Button() {
-        const fragment = document.createDocumentFragment();
-        const button = document.createElement("button");
-
-        button.innerText = "Next Step";
-
-        button.className = "btn-next";
-
-        fragment.appendChild(button);
-
-        return fragment;
-      }
-      // const NameInput = Input("text", "name", "Name", "e.g. Stephen King");
-      // const EmailAddress = Input(
-      //   "email",
-      //   "email",
-      //   "Email Address",
-      //   "e.g. stephenking@lorem.com"
-      // );
-      // const PhoneNumber = Input(
-      //   "tel",
-      //   "tel",
-      //   "Phone Number",
-      //   "e.g. +1 234 567 890"
-      // );
-
-      // document.body.appendChild(NameInput);
-      // document.body.appendChild(EmailAddress);
-      // document.body.appendChild(PhoneNumber);
-
-      const NextStep = Button();
-      document.body.appendChild(NextStep);
-    </script>
   </body>
 </html>
