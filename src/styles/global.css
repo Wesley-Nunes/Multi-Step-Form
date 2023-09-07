@@ -1,0 +1,14 @@
+:root {
+  font-size: 62.5%;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 16px;
+  height: 90vh;
+  background-color: var(--pastel-blue);
+  font: 1.6rem "Ubuntu", sans-serif;
+  color: var(--marine-blue);
+}
