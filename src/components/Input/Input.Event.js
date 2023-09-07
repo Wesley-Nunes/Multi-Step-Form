@@ -2,7 +2,8 @@ import pubSub from "../../pubsub";
 
 const fieldRequired = "This Field is Required";
 const onlyText = "Should contain only text";
-const charLimit = (n) => `Should be greater than ${n} character`;
+const charLimit = (n) => `At least ${n + 1} characters`;
+const wrongEmailFormatMessage = "Wrong email format";
 
 /**
  * checkErrorName
@@ -31,12 +32,16 @@ function checkErrorName(e) {
 function checkErrorEmail(e) {
   const message = e.target.value;
   const limit = 4;
+  const wrongEmailFormat =
+    !/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(message);
   let errorMessage = "";
 
   if (!message) {
     errorMessage = fieldRequired;
   } else if (message.length <= limit) {
     errorMessage = charLimit(limit);
+  } else if (wrongEmailFormat) {
+    errorMessage = wrongEmailFormatMessage;
   }
 
   pubSub.publish("errorEmailEvent", errorMessage);
