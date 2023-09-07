@@ -1,3 +1,4 @@
+import terser from "@rollup/plugin-terser";
 import scss from "rollup-plugin-scss";
 
 export default {
@@ -6,7 +7,8 @@ export default {
     {
       file: "dist/jsBundle.js",
       format: "iife",
+      plugins: [terser()],
     },
   ],
-  plugins: [scss({ fileName: "cssBundle.css" })],
+  plugins: [scss({ fileName: "cssBundle.css", outputStyle: "compressed" })],
 };

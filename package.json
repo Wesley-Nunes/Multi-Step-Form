@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "type": "module",
   "scripts": {
-    "watch": "rollup -c --watch",
+    "watch": "rollup -c rollup.config.js --watch",
     "server": "live-server",
     "dev": "yarn watch | yarn server",
     "build": "rollup -c rollup.build.js"
@@ -11,6 +11,8 @@
   "devDependencies": {
     "@rollup/plugin-terser": "^0.4.3",
     "live-server": "^1.2.2",
-    "rollup": "^3.28.1"
+    "rollup": "^3.28.1",
+    "rollup-plugin-scss": "^4.0.0",
+    "sass": "^1.66.1"
   }
 }
