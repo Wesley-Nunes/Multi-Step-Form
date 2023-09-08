@@ -3,7 +3,7 @@ import "./Card.Style.css";
  *
  * @param {string} title - The title of the current step
  * @param {string} description - The description of the current step
- * @returns DocumentFragment
+ * @returns {HTMLElement}
  */
 function Card(title, description) {
   const template = document.querySelector("#card-component");
@@ -14,7 +14,7 @@ function Card(title, description) {
   h1.innerText = title;
   p.innerText = description;
 
-  return clone;
+  return clone.children[0];
 }
 
 export default Card;

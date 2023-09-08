@@ -5,6 +5,7 @@ import "./Input.Style.css";
  * @param {string} id - The id of the input.
  * @param {string} labelMessage - The caption of the input.
  * @param {string} placeholder - The placeholder to be show inside the input.
+ * @returns {HTMLLabelElement}
  */
 function Input(type, id, labelMessage, placeholder) {
   const template = document.querySelector("#input-component");
@@ -22,7 +23,7 @@ function Input(type, id, labelMessage, placeholder) {
   input.type = type;
   input.setAttribute("aria-describedby", error.id);
 
-  return clone;
+  return clone.children[0];
 }
 
 export default Input;

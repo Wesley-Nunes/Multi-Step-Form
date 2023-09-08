@@ -23,6 +23,8 @@ function checkErrorName(e) {
   }
 
   pubSub.publish("errorNameEvent", errorMessage);
+
+  return errorMessage;
 }
 
 /**
@@ -45,6 +47,8 @@ function checkErrorEmail(e) {
   }
 
   pubSub.publish("errorEmailEvent", errorMessage);
+
+  return errorMessage;
 }
 
 /**
@@ -63,6 +67,8 @@ function checkErrorTel(e) {
   }
 
   pubSub.publish("errorTelEvent", errorMessage);
+
+  return errorMessage;
 }
 
 function insertErrorMessage(eventName, errorComponent) {
