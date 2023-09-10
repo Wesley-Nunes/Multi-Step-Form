@@ -34,15 +34,22 @@
       <main class="card-component">
         <h1 class="card-component__title"></h1>
         <p class="card-component__description"></p>
-        <section class="card-component__input-section"></section>
+        <section
+          class="card-component__input-section card-component--hidden"
+        ></section>
+        <select size="3" class="card-component--hidden"></select>
       </main>
     </template>
 
     <!-- Navigation Component -->
     <template id="navigation-component">
       <nav class="navigation-component__wrapper">
-        <button class="navigation-component--go-back">Go Back</button>
-        <button class="navigation-component--next-step">Next Step</button>
+        <button type="button" class="navigation-component--go-back">
+          Go Back
+        </button>
+        <button type="submit" class="navigation-component--next-step">
+          Next Step
+        </button>
       </nav>
     </template>
 

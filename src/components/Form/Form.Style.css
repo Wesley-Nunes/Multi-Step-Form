@@ -6,3 +6,7 @@
   gap: 6.4rem;
   height: 100vh;
 }
+
+.form-component--hidden {
+  display: none;
+}

@@ -10,6 +10,9 @@
   position: absolute;
   bottom: 184px;
 }
+.card-component--hidden {
+  display: none;
+}
 .card-component__input-section {
   display: flex;
   flex-direction: column;

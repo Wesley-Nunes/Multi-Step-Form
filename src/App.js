@@ -1,19 +1,38 @@
 import StepOnePage from "./pages/StepOne";
+import StepTwoPage from "./pages/StepTwo";
 
-// function cleanPage() {
-//   while (document.body.firstChild) {
-//     document.body.removeChild(document.body.firstChild);
-//   }
-// }
+/**
+ *
+ * @param {string} currentPageName - The current page name
+ */
+function cleanPage(currentPageName) {
+  const pages = document.body.querySelectorAll("form");
+  if (pages.length) {
+    for (let i = 0; i < pages.length; i++) {
+      const page = pages[i];
+      if (page.id !== currentPageName) {
+        page.classList.add("form-component--hidden");
+      } else {
+        page.classList.remove("form-component--hidden");
+      }
+    }
+  }
+}
 
 function StepOne() {
-  // cleanPage();
-  document.body.appendChild(StepOnePage);
+  cleanPage("StepOnePage");
+  const memoStepOnePage = document.body.querySelector("#StepOnePage");
+  if (!memoStepOnePage) {
+    document.body.appendChild(StepOnePage);
+  }
 }
 
 function StepTwo() {
-  // cleanPage();
-  document.body.innerHTML = "Step two";
+  cleanPage("StepTwoPage");
+  const memoStepTwoPage = document.body.querySelector("#StepTwoPage");
+  if (!memoStepTwoPage) {
+    document.body.appendChild(StepTwoPage);
+  }
 }
 
 const routes = {

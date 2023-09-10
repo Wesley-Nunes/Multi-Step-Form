@@ -12,11 +12,12 @@ import "../styles/normalize.css";
 import "../styles/variables.css";
 
 // Create the components
-const StepOne = Form();
-const ProgressOne = Progress();
+const StepOne = Form("StepOnePage");
+const ProgressOne = Progress(1);
 const PersonalInfo = Card(
   "Personal info",
-  "Please provide your name, email address, and phone number."
+  "Please provide your name, email address, and phone number.",
+  "section"
 );
 const Name = Input("text", "name", "Name", "e.g. Stephen King");
 const Email = Input(
@@ -26,7 +27,7 @@ const Email = Input(
   "e.g. stephenking@lorem.com"
 );
 const PhoneNumber = Input("tel", "tel", "Phone Number", "e.g. +1 234 567 890");
-const Nav = Navigation();
+const Nav = Navigation("firstPage");
 
 // Add the events
 const { checkErrorName, checkErrorEmail, checkErrorTel, insertError } =
@@ -44,18 +45,14 @@ insertError("errorTelEvent", PhoneNumber);
 StepOne.addEventListener("submit", nextStep);
 
 // Make the page
-const stepOneProgress = ProgressOne.children[0];
-stepOneProgress.classList.add("progress-component__step--enabled");
 const stepSection = PersonalInfo.querySelector("section");
-const goBackBtn = Nav.querySelector(".navigation-component--go-back");
 
-StepOne.appendChild(ProgressOne);
 stepSection.appendChild(Name);
 stepSection.appendChild(Email);
 stepSection.appendChild(PhoneNumber);
-StepOne.appendChild(PersonalInfo);
 
-goBackBtn.style.visibility = "hidden";
+StepOne.appendChild(ProgressOne);
+StepOne.appendChild(PersonalInfo);
 StepOne.appendChild(Nav);
 
 export default StepOne;
