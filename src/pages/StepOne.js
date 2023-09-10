@@ -5,6 +5,7 @@ import {
   Input,
   InputEvents,
   Navigation,
+  Progress,
 } from "../components/index";
 import "../styles/global.css";
 import "../styles/normalize.css";
@@ -12,6 +13,7 @@ import "../styles/variables.css";
 
 // Create the components
 const StepOne = Form();
+const ProgressOne = Progress();
 const PersonalInfo = Card(
   "Personal info",
   "Please provide your name, email address, and phone number."
@@ -45,9 +47,12 @@ insertErrorMessage("errorTelEvent", ErrorPhone);
 StepOne.addEventListener("submit", nextStep);
 
 // Make the page
+const stepOneProgress = ProgressOne.children[0];
+stepOneProgress.classList.add("progress-component__step--enabled");
 const stepSection = PersonalInfo.querySelector("section");
 const goBackBtn = Nav.querySelector(".navigation-component--go-back");
 
+StepOne.appendChild(ProgressOne);
 stepSection.appendChild(Name);
 stepSection.appendChild(Email);
 stepSection.appendChild(PhoneNumber);

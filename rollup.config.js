@@ -9,7 +9,6 @@ export default {
     {
       file: "dist/jsBundle.js",
       format: "iife",
-      sourcemap: true,
     },
   ],
   plugins: [

@@ -1,18 +1,18 @@
 import StepOnePage from "./pages/StepOne";
 
-function cleanPage() {
-  while (document.body.firstChild) {
-    document.body.removeChild(document.body.firstChild);
-  }
-}
+// function cleanPage() {
+//   while (document.body.firstChild) {
+//     document.body.removeChild(document.body.firstChild);
+//   }
+// }
 
 function StepOne() {
-  cleanPage();
+  // cleanPage();
   document.body.appendChild(StepOnePage);
 }
 
 function StepTwo() {
-  cleanPage();
+  // cleanPage();
   document.body.innerHTML = "Step two";
 }
 

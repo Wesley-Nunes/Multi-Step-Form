@@ -1,0 +1,31 @@
+.progress-component {
+  display: flex;
+  column-gap: 1.6rem;
+  justify-content: center;
+
+  width: 375px;
+  /* height = size of image - the padding top */
+  height: 140px;
+
+  background-image: url("../public/bg-sidebar-mobile.svg");
+  background-color: var(--magnolia);
+
+  padding-top: 32px;
+}
+
+.progress-component__step {
+  height: 32px;
+  width: 32px;
+
+  font-weight: 600;
+  text-align: center;
+  line-height: 32px;
+  color: white;
+
+  border: 1px solid white;
+  border-radius: 25px;
+}
+.progress-component__step--enabled {
+  background-color: var(--magnolia);
+  color: black;
+}

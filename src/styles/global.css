@@ -8,7 +8,7 @@ body {
   align-items: center;
   gap: 16px;
   height: 100vh;
-  background-color: var(--pastel-blue);
+  background-color: var(--magnolia);
   font: 1.6rem "Ubuntu", sans-serif;
   color: var(--marine-blue);
 }
