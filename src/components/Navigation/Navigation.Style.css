@@ -1,15 +1,15 @@
-.button-component__wrapper {
+.navigation-component__wrapper {
   width: 100vw;
   background-color: white;
-  height: 6.4rem;
+  height: 7.2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.button-component--next-step {
+.navigation-component--next-step {
   width: 9.6rem;
-  height: 3.2rem;
+  height: 4rem;
   background-color: var(--marine-blue);
   color: white;
   border-radius: 4px;
@@ -18,6 +18,6 @@
   cursor: pointer;
   margin-right: 2.1rem;
 }
-.button-component--next-step:hover {
+.navigation-component--next-step:hover {
   background-color: var(--purplish-blue);
 }

@@ -1,10 +1,18 @@
 import StepOnePage from "./pages/StepOne";
 
+function cleanPage() {
+  while (document.body.firstChild) {
+    document.body.removeChild(document.body.firstChild);
+  }
+}
+
 function StepOne() {
+  cleanPage();
   document.body.appendChild(StepOnePage);
 }
 
 function StepTwo() {
+  cleanPage();
   document.body.innerHTML = "Step two";
 }
 

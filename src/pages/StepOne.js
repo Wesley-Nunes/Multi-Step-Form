@@ -4,7 +4,7 @@ import {
   Card,
   Input,
   InputEvents,
-  NextStepBtn,
+  Navigation,
 } from "../components/index";
 import "../styles/global.css";
 import "../styles/normalize.css";
@@ -24,7 +24,7 @@ const Email = Input(
   "e.g. stephenking@lorem.com"
 );
 const PhoneNumber = Input("tel", "tel", "Phone Number", "e.g. +1 234 567 890");
-const NextStep = NextStepBtn();
+const Nav = Navigation();
 
 // Add the events
 const { checkErrorName, checkErrorEmail, checkErrorTel, insertErrorMessage } =
@@ -46,10 +46,14 @@ StepOne.addEventListener("submit", nextStep);
 
 // Make the page
 const stepSection = PersonalInfo.querySelector("section");
+const goBackBtn = Nav.querySelector(".navigation-component--go-back");
+
 stepSection.appendChild(Name);
 stepSection.appendChild(Email);
 stepSection.appendChild(PhoneNumber);
 StepOne.appendChild(PersonalInfo);
-StepOne.appendChild(NextStep);
+
+goBackBtn.style.visibility = "hidden";
+StepOne.appendChild(Nav);
 
 export default StepOne;
