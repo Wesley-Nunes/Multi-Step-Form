@@ -29,20 +29,17 @@ const PhoneNumber = Input("tel", "tel", "Phone Number", "e.g. +1 234 567 890");
 const Nav = Navigation();
 
 // Add the events
-const { checkErrorName, checkErrorEmail, checkErrorTel, insertErrorMessage } =
+const { checkErrorName, checkErrorEmail, checkErrorTel, insertError } =
   InputEvents;
 const { nextStep } = FormEvents;
 Name.addEventListener("input", checkErrorName);
-const ErrorName = Name.querySelector(".input-component__error-msg");
-insertErrorMessage("errorNameEvent", ErrorName);
+insertError("errorNameEvent", Name);
 
 Email.addEventListener("input", checkErrorEmail);
-const ErrorEmail = Email.querySelector(".input-component__error-msg");
-insertErrorMessage("errorEmailEvent", ErrorEmail);
+insertError("errorEmailEvent", Email);
 
 PhoneNumber.addEventListener("input", checkErrorTel);
-const ErrorPhone = PhoneNumber.querySelector(".input-component__error-msg");
-insertErrorMessage("errorTelEvent", ErrorPhone);
+insertError("errorTelEvent", PhoneNumber);
 
 StepOne.addEventListener("submit", nextStep);
 

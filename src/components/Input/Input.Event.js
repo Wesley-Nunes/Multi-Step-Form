@@ -71,9 +71,23 @@ function checkErrorTel(e) {
   return errorMessage;
 }
 
-function insertErrorMessage(eventName, errorComponent) {
+/**
+ * insertError
+ * @param {string} eventName - The name of the event to subscribe.
+ * @param {HTMLElement} inputComponent - The Input Component
+ */
+function insertError(eventName, inputComponent) {
   pubSub.subscribe(eventName, (errorMessage) => {
-    errorComponent.textContent = errorMessage;
+    const error = inputComponent.querySelector(".input-component__error-msg");
+    const input = inputComponent.querySelector("input");
+
+    error.textContent = errorMessage;
+
+    if (errorMessage) {
+      input.classList.add("input-component__input--error");
+    } else {
+      input.classList.remove("input-component__input--error");
+    }
   });
 }
 
@@ -81,5 +95,5 @@ export default {
   checkErrorName,
   checkErrorEmail,
   checkErrorTel,
-  insertErrorMessage,
+  insertError,
 };

@@ -33,3 +33,11 @@
 .input-component__input:-webkit-autofill:active {
   -webkit-box-shadow: 0 0 0 30px white inset !important;
 }
+
+.input-component__input--error {
+  border: 1px solid var(--strawberry-red);
+}
+.input-component__input--error:focus {
+  outline: 1px solid var(--strawberry-red);
+  border: 1px solid var(--strawberry-red);
+}
