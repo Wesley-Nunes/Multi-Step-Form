@@ -8,10 +8,9 @@
   border-radius: 12px;
 
   position: absolute;
-  bottom: 184px;
-}
-.card-component--hidden {
-  display: none;
+  top: 99px;
+
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 .card-component__input-section {
   display: flex;

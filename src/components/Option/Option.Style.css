@@ -2,6 +2,7 @@
   display: flex;
   border: 1px ridge var(--light-gray);
   border-radius: 8px;
+  min-height: 96px;
 }
 
 .option-component--selected {
@@ -36,4 +37,8 @@
 
 .option-component__extra {
   font-size: 1.4rem;
+}
+
+.option-component__extra--hidden {
+  display: none;
 }

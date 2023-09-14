@@ -16,8 +16,7 @@ const StepOne = Form("StepOnePage");
 const ProgressOne = Progress(1);
 const PersonalInfo = Card(
   "Personal info",
-  "Please provide your name, email address, and phone number.",
-  "section"
+  "Please provide your name, email address, and phone number."
 );
 const Name = Input("text", "name", "Name", "e.g. Stephen King");
 const Email = Input(

@@ -8,7 +8,25 @@ const markText = (e) => {
     year.classList.remove("switch-component--selected-option");
   }
 };
+const toggleBillingPeriod = (e) => {
+  const options =
+    e.currentTarget.parentElement.querySelectorAll(".option-component");
+  for (const option of options) {
+    const priceText = option.querySelector(".option-component__price");
+    const extraText = option.querySelector(".option-component__extra");
+    if (e.target.checked) {
+      const yearPrice = priceText.dataset.yearPrice;
+      priceText.innerText = `$${yearPrice}/yr`;
+      extraText.classList.remove("option-component__extra--hidden");
+    } else {
+      const monthPrice = priceText.dataset.monthPrice;
+      priceText.innerText = `$${monthPrice}/mo`;
+      extraText.classList.add("option-component__extra--hidden");
+    }
+  }
+};
 
 export default {
   markText,
+  toggleBillingPeriod,
 };

@@ -14,15 +14,13 @@ function OptionComponent(imgSrc, name, price) {
   const img = clone.querySelector("img");
   const optionName = clone.querySelector(".option-component__name");
   const optionPrice = clone.querySelector(".option-component__price");
-  const extra = clone.querySelector(".option-component__extra");
 
   clone.children[0].id = name;
   img.src = imgSrc;
   optionName.innerText = name;
-  // optionPrice.dataset.monthPrice = price.month;
-  // optionPrice.dataset.monthPrice = price.month;
+  optionPrice.dataset.monthPrice = price.month;
+  optionPrice.dataset.yearPrice = price.year;
   optionPrice.innerText = `$${price.month}/mo`;
-  // extra.innerText = "2 months free";
 
   return clone.children[0];
 }
