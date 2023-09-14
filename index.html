@@ -34,10 +34,7 @@
       <main class="card-component">
         <h1 class="card-component__title"></h1>
         <p class="card-component__description"></p>
-        <section
-          class="card-component__input-section card-component--hidden"
-        ></section>
-        <select size="3" class="card-component--hidden"></select>
+        <section class="card-component__input-section"></section>
       </main>
     </template>
 
@@ -66,6 +63,32 @@
         <div class="progress-component__step">3</div>
         <div class="progress-component__step">4</div>
       </aside>
+    </template>
+
+    <!-- Option Component -->
+    <template id="option-component">
+      <div class="option-component">
+        <div class="option-component__img-wrapper">
+          <img />
+        </div>
+        <div class="option-component__items-wrapper">
+          <p class="option-component__name"></p>
+          <p class="option-component__price"></p>
+          <p class="option-component__extra"></p>
+        </div>
+      </div>
+    </template>
+
+    <!-- Switch Component -->
+    <template id="switch-component">
+      <section class="switch-component">
+        <span class="switch-component--selected-option">Monthly</span>
+        <label class="switch-component__toggle">
+          <input type="checkbox" class="switch-component__input" />
+          <div class="switch-component__fill"></div>
+        </label>
+        <span>Yearly</span>
+      </section>
     </template>
   </body>
 </html>

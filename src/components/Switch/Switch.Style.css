@@ -1,0 +1,53 @@
+.switch-component {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  column-gap: 16px;
+
+  height: 48px;
+
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--cool-gray);
+
+  margin-top: 32px;
+
+  border-radius: 4px;
+
+  background-color: var(--alabaster);
+}
+.switch-component--selected-option {
+  color: var(--marine-blue);
+}
+.switch-component__toggle {
+  display: inline-block;
+  cursor: pointer;
+}
+.switch-component__input {
+  display: none;
+}
+.switch-component__fill {
+  position: relative;
+  width: 40px;
+  height: 20px;
+  border-radius: 10px;
+  background-color: var(--marine-blue);
+  transition: background-color 0.2s;
+}
+.switch-component__input:checked ~ .switch-component__fill {
+  background-color: var(--marine-blue);
+}
+.switch-component__fill::after {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 12px;
+  height: 12px;
+  background-color: var(--alabaster);
+  border-radius: 10px;
+}
+.switch-component__input:checked ~ .switch-component__fill::after {
+  transform: translateX(20px);
+}
