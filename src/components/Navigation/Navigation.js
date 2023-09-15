@@ -1,14 +1,14 @@
 import "./Navigation.Style.css";
 
 /**
- * Creates a next step button component.
+ * Creates the navigation  component.
  * @returns {HTMLElement}
- * @param {string} [page] - The first or last page.
+ * @param {string} [page] - The first or last page. e.g.: "firstPage" || "lastPage"
  */
 function Navigation(page) {
   const template = document.querySelector("#navigation-component");
   const clone = template.content.cloneNode(true);
-  const goBackBtn = clone.querySelector(".navigation-component--go-back");
+  const goBackBtn = clone.querySelector(".navigation-component__go-back");
 
   if (page && page === "firstPage") {
     goBackBtn.style.visibility = "hidden";
