@@ -64,4 +64,9 @@ StepTwo.appendChild(ProgressTwo);
 StepTwo.appendChild(Plan);
 StepTwo.appendChild(Nav);
 
+// After the page is create.
+// Select this option by default
+Arcade.children[0].checked = true;
+Arcade.click();
+
 export default StepTwo;

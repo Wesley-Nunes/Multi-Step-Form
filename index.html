@@ -73,29 +73,35 @@
 
     <!-- Option Component -->
     <template id="option-component">
-      <div class="option-component">
+      <label class="option-component">
+        <input type="radio" name="plan" class="option-component__input--hidden" />
         <div class="option-component__img-wrapper">
           <img />
         </div>
         <div class="option-component__items-wrapper">
           <p class="option-component__name"></p>
           <p class="option-component__price"></p>
-          <p class="option-component__extra option-component__extra--hidden">
+          <p class="option-component__extra">
             2 months free
           </p>
-        </div>
+        </label>
       </div>
     </template>
 
     <!-- Switch Component -->
     <template id="switch-component">
       <section class="switch-component">
-        <span class="switch-component--selected-option">Monthly</span>
+        <span>Monthly</span>
         <label class="switch-component__toggle">
-          <input type="checkbox" class="switch-component__input" />
+          <input
+            name="billing-cycle"            
+            type="checkbox"
+            class="switch-component__input"
+            checked
+          />
           <div class="switch-component__fill"></div>
         </label>
-        <span>Yearly</span>
+        <span class="switch-component--selected-option">Yearly</span>
       </section>
     </template>
   </body>

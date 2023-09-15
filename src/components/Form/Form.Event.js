@@ -1,16 +1,20 @@
 import InputEvents from "../Input/Input.Event";
 
-function validateFormData(formData) {
-  const { checkErrorName, checkErrorEmail, checkErrorTel } = InputEvents;
-  const name = formData.get("name");
-  const email = formData.get("email");
-  const tel = formData.get("tel");
+function validateFormData(formData, formId) {
+  if (formId === "StepOnePage") {
+    const { checkErrorName, checkErrorEmail, checkErrorTel } = InputEvents;
+    const name = formData.get("name");
+    const email = formData.get("email");
+    const tel = formData.get("tel");
 
-  const nameError = checkErrorName({ target: { value: name } });
-  const emailError = checkErrorEmail({ target: { value: email } });
-  const telError = checkErrorTel({ target: { value: tel } });
+    const nameError = checkErrorName({ target: { value: name } });
+    const emailError = checkErrorEmail({ target: { value: email } });
+    const telError = checkErrorTel({ target: { value: tel } });
 
-  return !(nameError || emailError || telError);
+    return !(nameError || emailError || telError);
+  }
+
+  return true;
 }
 
 function saveData(formData) {
@@ -21,9 +25,9 @@ function saveData(formData) {
 
 function nextStep(e) {
   e.preventDefault();
-  const form = document.querySelector("form");
+  const form = e.currentTarget;
   const formData = new FormData(form);
-  const isValid = validateFormData(formData);
+  const isValid = validateFormData(formData, form.id);
   if (isValid) {
     saveData(formData);
     const nextStepHash = +location.hash.slice(1) + 1;

@@ -5,6 +5,10 @@
   min-height: 96px;
 }
 
+.option-component__input--hidden {
+  display: none;
+}
+
 .option-component--selected {
   border: 1px ridge var(--purplish-blue);
   background-color: var(--magnolia);

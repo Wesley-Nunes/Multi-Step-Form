@@ -14,13 +14,15 @@ function OptionComponent(imgSrc, name, price) {
   const img = clone.querySelector("img");
   const optionName = clone.querySelector(".option-component__name");
   const optionPrice = clone.querySelector(".option-component__price");
+  const input = clone.querySelector("input");
 
   clone.children[0].id = name;
+  input.value = name;
   img.src = imgSrc;
   optionName.innerText = name;
   optionPrice.dataset.monthPrice = price.month;
   optionPrice.dataset.yearPrice = price.year;
-  optionPrice.innerText = `$${price.month}/mo`;
+  optionPrice.innerText = `$${price.year}/yr`;
 
   return clone.children[0];
 }
