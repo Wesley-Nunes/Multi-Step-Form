@@ -12,6 +12,9 @@ function validateFormData(formData, formId) {
     const telError = checkErrorTel({ target: { value: tel } });
 
     return !(nameError || emailError || telError);
+  } else if (formId === "StepTwoPage") {
+    const billingCycle = formData.get("billing-cycle");
+    formData.append("billing-cycle", billingCycle ? "year" : "month");
   }
 
   return true;

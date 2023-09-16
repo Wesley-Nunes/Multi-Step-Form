@@ -1,11 +1,15 @@
 import StepOnePage from "./pages/StepOne";
 import StepTwoPage from "./pages/StepTwo";
+import StepThreePage from "./pages/StepThree";
+import "./styles/global.css";
+import "./styles/normalize.css";
+import "./styles/variables.css";
 
 /**
  *
  * @param {string} currentPageName - The current page name
  */
-function cleanPage(currentPageName) {
+function toggleVisibility(currentPageName) {
   const pages = document.body.querySelectorAll("form");
   if (pages.length) {
     for (let i = 0; i < pages.length; i++) {
@@ -19,25 +23,61 @@ function cleanPage(currentPageName) {
   }
 }
 
+function checkCascadeAlterations(pageName) {
+  const page = document.body.querySelector(`#${pageName}`);
+
+  if (!page) {
+    return;
+  }
+
+  const billingCycleInMemo = sessionStorage.getItem("billing-cycle");
+  const billingCycleInPage = page
+    .querySelector(".checkbox-component__price")
+    .textContent.includes("yr")
+    ? "year"
+    : "month";
+  if (billingCycleInMemo === billingCycleInPage) {
+    return;
+  }
+
+  const pricesToUpdate = page.querySelectorAll(".checkbox-component__price");
+  for (const price of pricesToUpdate) {
+    price.innerText =
+      billingCycleInMemo === "month"
+        ? `+$${price.dataset.monthPrice}/mo`
+        : `+$${price.dataset.yearPrice}/yr`;
+  }
+}
+
 function StepOne() {
-  cleanPage("StepOnePage");
   const memoStepOnePage = document.body.querySelector("#StepOnePage");
   if (!memoStepOnePage) {
     document.body.appendChild(StepOnePage);
   }
+  toggleVisibility("StepOnePage");
 }
 
 function StepTwo() {
-  cleanPage("StepTwoPage");
   const memoStepTwoPage = document.body.querySelector("#StepTwoPage");
   if (!memoStepTwoPage) {
     document.body.appendChild(StepTwoPage);
   }
+  toggleVisibility("StepTwoPage");
+}
+
+function StepThree() {
+  checkCascadeAlterations("StepThreePage");
+  const memoStepThreePage = document.body.querySelector("#StepThreePage");
+  if (!memoStepThreePage) {
+    document.body.appendChild(StepThreePage);
+  }
+  toggleVisibility("StepThreePage");
 }
 
 const routes = {
   "#1": StepOne,
   "#2": StepTwo,
+  "#3": StepThree,
 };
 
 function navigate(initialHash) {

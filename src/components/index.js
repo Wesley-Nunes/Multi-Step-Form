@@ -9,3 +9,5 @@ export { default as Option } from "./Option/Option";
 export { default as OptionEvents } from "./Option/Option.Event";
 export { default as Switch } from "./Switch/Switch";
 export { default as SwitchEvents } from "./Switch/Switch.Event";
+export { default as Checkbox } from "./Checkbox/Checkbox";
+export { default as CheckboxEvents } from "./Checkbox/Checkbox.Event";

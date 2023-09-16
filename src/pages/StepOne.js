@@ -7,9 +7,6 @@ import {
   Navigation,
   Progress,
 } from "../components/index";
-import "../styles/global.css";
-import "../styles/normalize.css";
-import "../styles/variables.css";
 
 // Create the components
 const StepOne = Form("StepOnePage");
