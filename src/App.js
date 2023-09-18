@@ -1,7 +1,3 @@
-// import StepOnePage from "./pages/StepOne";
-// import StepTwoPage from "./pages/StepTwo";
-// import StepThreePage from "./pages/StepThree";
-// import StepFourPage from "./pages/StepFour";
 import "./styles/global.css";
 import "./styles/normalize.css";
 import "./styles/variables.css";
@@ -153,11 +149,22 @@ function StepFour() {
   toggleVisibility("StepFourPage");
 }
 
+function ThankYou() {
+  const memoThankYouPage = document.body.querySelector("#ThankYou");
+  if (!memoThankYouPage) {
+    import("./pages/ThankYou").then(({ default: ThankYouPage }) =>
+      document.body.appendChild(ThankYouPage)
+    );
+  }
+  toggleVisibility("ThankYou");
+}
+
 const routes = {
   "#1": StepOne,
   "#2": StepTwo,
   "#3": StepThree,
   "#4": StepFour,
+  "#thank-you": ThankYou,
 };
 
 function navigate(initialHash) {
@@ -178,4 +185,4 @@ function navigate(initialHash) {
 window.addEventListener("hashchange", navigate);
 
 // Initial navigation
-navigate("1");
+navigate("thank-you");

@@ -16,7 +16,7 @@ const Finishing = Card(
 );
 const ItemsComponent = Items();
 
-const Nav = Navigation();
+const Nav = Navigation("fourthPage");
 
 // Add the events
 const { nextStep } = FormEvents;

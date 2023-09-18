@@ -70,7 +70,8 @@ function nextStep(e) {
   const isValid = validateFormData(formData, form.id);
   if (isValid) {
     saveData(formData);
-    const nextStepHash = +location.hash.slice(1) + 1;
+    const nextStepHash =
+      form.id === "StepFourPage" ? "thank-you" : +location.hash.slice(1) + 1;
     location.hash = nextStepHash;
   }
 }
