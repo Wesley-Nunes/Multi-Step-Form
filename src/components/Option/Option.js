@@ -19,10 +19,10 @@ function OptionComponent(imgSrc, name, price) {
   clone.children[0].id = name;
   input.value = name;
   img.src = imgSrc;
-  optionName.innerText = name;
+  optionName.textContent = name;
   optionPrice.dataset.monthPrice = price.month;
   optionPrice.dataset.yearPrice = price.year;
-  optionPrice.innerText = `$${price.year}/yr`;
+  optionPrice.textContent = `$${price.year}/yr`;
 
   return clone.children[0];
 }

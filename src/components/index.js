@@ -11,3 +11,4 @@ export { default as Switch } from "./Switch/Switch";
 export { default as SwitchEvents } from "./Switch/Switch.Event";
 export { default as Checkbox } from "./Checkbox/Checkbox";
 export { default as CheckboxEvents } from "./Checkbox/Checkbox.Event";
+export { default as Items } from "./Items/Items";

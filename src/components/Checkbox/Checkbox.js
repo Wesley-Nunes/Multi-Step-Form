@@ -15,20 +15,20 @@ function Checkbox(id, labelMessage, price) {
   const clone = template.content.cloneNode(true);
   const label = clone.querySelector("label");
   const [title, description] = clone.querySelector("span").children;
-
   const priceMessage = clone.querySelector(".checkbox-component__price");
   const checkbox = clone.querySelector("input");
+  const billingCycle = sessionStorage.getItem("billing-cycle");
 
   label.htmlFor = id;
-  title.innerText = labelMessage.title;
-  description.innerText = labelMessage.description;
+  title.textContent = labelMessage.title;
+  description.textContent = labelMessage.description;
   checkbox.id = id;
   checkbox.name = id;
-  const billingCycle = sessionStorage.getItem("billing-cycle");
+
   priceMessage.dataset.monthPrice = price.month;
   priceMessage.dataset.yearPrice = price.year;
-  priceMessage.innerText =
-    billingCycle === "month" ? `+$${price.month}/mo` : `+$${price.year}/yr`;
+  priceMessage.textContent =
+    billingCycle === "Monthly" ? `+$${price.month}/mo` : `+$${price.year}/yr`;
 
   return clone.children[0];
 }

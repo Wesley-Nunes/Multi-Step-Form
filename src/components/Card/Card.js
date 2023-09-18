@@ -11,8 +11,8 @@ function Card(title, description) {
   const h1 = clone.querySelector("h1");
   const p = clone.querySelector("p");
 
-  h1.innerText = title;
-  p.innerText = description;
+  h1.textContent = title;
+  p.textContent = description;
 
   return clone.children[0];
 }

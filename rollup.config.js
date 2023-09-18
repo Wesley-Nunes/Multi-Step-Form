@@ -7,8 +7,8 @@ export default {
   input: "./src/App.js",
   output: [
     {
-      file: "dist/jsBundle.js",
-      format: "iife",
+      dir: "dist",
+      format: "es",
     },
   ],
   plugins: [

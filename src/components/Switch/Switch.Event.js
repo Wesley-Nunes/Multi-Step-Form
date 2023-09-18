@@ -16,11 +16,11 @@ const toggleBillingPeriod = (e) => {
     const extraText = option.querySelector(".option-component__extra");
     if (e.target.checked) {
       const yearPrice = priceText.dataset.yearPrice;
-      priceText.innerText = `$${yearPrice}/yr`;
+      priceText.textContent = `$${yearPrice}/yr`;
       extraText.classList.remove("option-component__extra--hidden");
     } else {
       const monthPrice = priceText.dataset.monthPrice;
-      priceText.innerText = `$${monthPrice}/mo`;
+      priceText.textContent = `$${monthPrice}/mo`;
       extraText.classList.add("option-component__extra--hidden");
     }
   }

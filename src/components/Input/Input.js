@@ -15,7 +15,7 @@ function Input(type, id, labelMessage, placeholder) {
   const [name, error] = clone.querySelectorAll("span");
 
   label.htmlFor = id;
-  name.innerText = labelMessage;
+  name.textContent = labelMessage;
   error.id = `${id}error`;
   input.id = id;
   input.name = id;
