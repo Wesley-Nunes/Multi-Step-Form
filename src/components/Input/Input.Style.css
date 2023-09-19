@@ -15,6 +15,9 @@
   color: var(--strawberry-red);
   padding-top: 4px;
 }
+.input-component__input-container {
+  display: flex;
+}
 .input-component__input {
   height: 0.6rem;
   border-radius: 4px;
@@ -22,6 +25,7 @@
   border: 1px solid var(--light-gray);
   padding: 16px;
   cursor: pointer;
+  flex: 1;
 }
 .input-component__input:focus {
   outline: 1px solid var(--purplish-blue);

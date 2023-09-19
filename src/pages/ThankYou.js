@@ -1,7 +1,7 @@
 import { Form, Card, Progress, ThankYou } from "../components/index";
 
 // Create the components
-const ThankYouPage = Form("thank-you");
+const ThankYouPage = Form("ThankYou");
 const ProgressFour = Progress(4);
 const Finishing = Card();
 const ThankYouMessage = ThankYou();

@@ -184,5 +184,5 @@ function navigate(initialHash) {
 
 window.addEventListener("hashchange", navigate);
 
-// Initial navigation
-navigate("thank-you");
+//  Initial navigation
+navigate("1");

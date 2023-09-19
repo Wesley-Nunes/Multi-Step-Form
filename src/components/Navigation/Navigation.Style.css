@@ -30,3 +30,9 @@
 .navigation-component__next-step:hover {
   background-color: var(--purplish-blue);
 }
+@media (min-width: 1000px) {
+  .navigation-component__wrapper {
+    grid-area: 2 / 2 / 3 / 3;
+    width: auto;
+  }
+}

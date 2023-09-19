@@ -11,7 +11,7 @@ function Progress(currentStep) {
   const step = clone.children[0].children[currentStep - 1];
   step.classList.add("progress-component__step--enabled");
 
-  return clone.children[0];
+  return clone;
 }
 
 export default Progress;

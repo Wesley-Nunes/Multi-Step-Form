@@ -1,6 +1,5 @@
 .card-component {
   width: 76vw;
-
   background-color: white;
 
   padding: 32px 24px;
@@ -24,4 +23,12 @@
 .card-component__description {
   color: var(--cool-gray);
   line-height: 24px;
+}
+@media (min-width: 1000px) {
+  .card-component {
+    grid-area: 1 / 2 / 2 / 3;
+    width: auto;
+    position: unset;
+    box-shadow: none;
+  }
 }
