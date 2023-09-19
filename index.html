@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="../public/favicon-32x32.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <script type="module" src="./dist/App.js" defer></script>
+    <link rel="stylesheet" href="./dist/cssBundle.css" />
+    <title>Multi Step Form</title>
+  </head>
+  <body>
+    <!-- Input Component -->
+    <template id="input-component">
+      <label class="input-component">
+        <div class="input-component__label-msg">
+          <span></span>
+          <span
+            aria-live="polite"
+            aria-atomic="true"
+            class="input-component__error-msg"
+          ></span>
+        </div>
+        <div class="input-component__input-container">
+          <input class="input-component__input" />
+        </div>
+      </label>
+    </template>
+
+    <!-- Card Component -->
+    <template id="card-component">
+      <main class="card-component">
+        <h1 class="card-component__title"></h1>
+        <p class="card-component__description"></p>
+        <section class="card-component__input-section"></section>
+      </main>
+    </template>
+
+    <!-- Navigation Component -->
+    <template id="navigation-component">
+      <nav class="navigation-component__wrapper">
+        <button
+          type="button"
+          class="navigation-component__btn navigation-component__go-back"
+        >
+          Go Back
+        </button>
+        <button
+          type="submit"
+          class="navigation-component__btn navigation-component__next-step"
+        >
+          Next Step
+        </button>
+      </nav>
+    </template>
+
+    <!-- Form Component -->
+    <template id="form-component">
+      <form class="form-component"></form>
+    </template>
+
+    <!-- Progress Component -->
+    <template id="progress-component">
+      <aside class="progress-component">
+        <div class="progress-component__step">1</div>
+        <div class="progress-component__step">2</div>
+        <div class="progress-component__step">3</div>
+        <div class="progress-component__step">4</div>
+      </aside>
+      <aside class="progress-component--extra">          
+        <div class="progress-component__step-text-container">
+          <p class="progress-component__step-step-text">STEP 1</p>
+          <p class="progress-component__step-desc-text">YOUR INFO</p>            
+        </div>
+        <div class="progress-component__step-text-container">
+          <p class="progress-component__step-step-text">STEP 2</p>
+          <p class="progress-component__step-desc-text">SELECT PLAN</p>            
+        </div>
+        <div class="progress-component__step-text-container">
+          <p class="progress-component__step-step-text">STEP 3</p>
+          <p class="progress-component__step-desc-text">ADD-ONS</p>            
+        </div>
+        <div class="progress-component__step-text-container">
+          <p class="progress-component__step-step-text">STEP 4</p>
+          <p class="progress-component__step-desc-text">SUMMARY</p>            
+        </div>
+      </aside>
+    </template>
+
+    <!-- Option Component -->
+    <template id="option-component">
+      <label class="option-component">
+        <input type="radio" name="plan" class="option-component__input--hidden" />
+        <div class="option-component__img-wrapper">
+          <img />
+        </div>
+        <div class="option-component__items-wrapper">
+          <p class="option-component__name"></p>
+          <p class="option-component__price"></p>
+          <p class="option-component__extra">
+            2 months free
+          </p>
+        </label>
+      </div>
+    </template>
+
+    <!-- Switch Component -->
+    <template id="switch-component">
+      <section class="switch-component">
+        <span>Monthly</span>
+        <label class="switch-component__toggle">
+          <input
+            name="billing-cycle"            
+            type="checkbox"
+            class="switch-component__input"
+            checked
+          />
+          <div class="switch-component__fill"></div>
+        </label>
+        <span class="switch-component--selected-option">Yearly</span>
+      </section>
+    </template>
+
+    <!-- Checkbox Component -->
+    <template id="checkbox-component">
+      <label class="checkbox-component">
+        <input type="checkbox" class="checkbox-component__input" />
+        <span>
+          <span class="checkbox-component__title"></span>
+          <span class="checkbox-component__description"></span>
+        </span>
+        <p class="checkbox-component__price"></p>
+      </label>
+    </template>
+
+    <!-- Items Component -->
+    <template id="items-component">
+      <div class="items-component">
+        <div class="items-component__item items-component__plan">
+          <span>            
+            <a class="items-component__link" href="#2">Change</a>
+          </span>
+          <span class="items-component__price"></span>
+        </div>
+        <div class="items-component__item items-component__item--hidden">
+          <span>
+            Online service            
+          </span>
+          <span class="items-component__price"></span>
+        </div>
+        <div class="items-component__item items-component__item--hidden">
+          <span>
+            Large Storage
+          </span>
+          <span class="items-component__price"></span>
+        </div>
+        <div class="items-component__item items-component__item--hidden">
+          <span>
+            Customizable profile
+          </span>
+          <span class="items-component__price"></span>
+      </div>
+      </div>      
+      </div>
+      <div class="items-component__item items-component__total">
+        <span>        
+        </span>
+        <span class="items-component__total-price"></span>
+      </div>
+    </template>
+
+    <!-- Thank You Component -->
+    <template id="thank-you-component">
+      <section class="thank-you-component">
+        <img width="48" height="48" src="../public/icon-thank-you.svg" />
+        <h1 class="thank-you-component__title">Thank you!</h1>
+        <p class="thank-you-component__description">
+          Thanks for confirming your subscription!
+          We hope you have fun using our platform. 
+          If you ever need support, please feel free 
+          to email us at support@loremgaming.com.
+        </p>
+      </section>
+    </template>
+  </body>
+</html>

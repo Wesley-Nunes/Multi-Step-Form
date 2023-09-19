@@ -1,0 +1,28 @@
+.form-component {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh;
+}
+
+.form-component--hidden {
+  display: none !important;
+}
+
+@media (min-width: 1000px) {
+  .form-component {
+    display: grid;
+    grid-template-columns: 242px 1fr;
+    grid-template-rows: 1fr 72px;
+    grid-column-gap: 72px;
+    grid-row-gap: 72px;
+    align-items: normal;
+    height: auto;
+    background-color: white;
+    padding: 1.6rem;
+    padding-right: 72px;
+    border-radius: 8px;
+    max-width: 60vw;
+  }
+}

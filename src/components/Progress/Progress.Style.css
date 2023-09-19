@@ -1,0 +1,72 @@
+.progress-component {
+  display: flex;
+  column-gap: 1.6rem;
+  justify-content: center;
+
+  width: 100vw;
+  /* height = size of image - the padding top */
+  height: 140px;
+
+  background-image: url("../public/bg-sidebar-mobile.svg");
+  background-color: var(--magnolia);
+  background-size: cover;
+  padding-top: 32px;
+}
+
+.progress-component__step {
+  height: 32px;
+  width: 32px;
+
+  font-weight: 600;
+  text-align: center;
+  line-height: 32px;
+  color: white;
+
+  border: 1px solid white;
+  border-radius: 25px;
+}
+.progress-component__step--enabled {
+  background-color: var(--magnolia);
+  color: black;
+}
+.progress-component--extra {
+  display: none;
+}
+
+@media (min-width: 1000px) {
+  .progress-component {
+    grid-area: 1 / 1 / 3 / 2;
+    background-image: url("../public/bg-sidebar-desktop.svg");
+    background-size: cover;
+    width: 178px;
+    height: auto;
+
+    flex-direction: column;
+    justify-content: flex-start;
+    row-gap: 32px;
+    padding: 32px;
+  }
+  .progress-component--extra {
+    position: absolute;
+    display: flex;
+    align-content: flex-end;
+    flex-wrap: wrap;
+    flex-direction: column;
+    row-gap: 32px;
+    width: 178px;
+    padding: 32px 0;
+  }
+  .progress-component__step-text-container {
+    height: 32px;
+  }
+  .progress-component__step-step-text {
+    margin: 0;
+    color: white;
+    font-size: 1.2rem;
+  }
+  .progress-component__step-desc-text {
+    margin: 0;
+    color: white;
+    font-weight: 500;
+  }
+}
